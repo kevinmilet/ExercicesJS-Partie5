@@ -1,19 +1,37 @@
+let paragraph = document.querySelector('p');
+let pink = document.getElementById('tPink');
+
+pink.addEventListener('click', textPink);
+
+let blue = document.getElementById('tBlue');
+blue.addEventListener('click', textBlue);
+
+let violet = document.getElementById('tViolet');
+violet.addEventListener('click', textViolet);
+
+let bold = document.getElementById('tBold');
+bold.addEventListener('click', textBold);
+
+let italic = document.getElementById('tItalic');
+italic.addEventListener('click', textItalic);
+
+
 function textPink() {
-    document.querySelector('p').style.color = "pink";
+    paragraph.style.color = "pink";
 }
 
 function textBlue() {
-    document.querySelector('p').style.color = "blue";
+    paragraph.style.color = "blue";
 }
 
 function textViolet() {
-    document.querySelector('p').style.color = "violet";
+    paragraph.style.color = "violet";
 }
 
 function textBold() {
-    document.querySelector('p').style.fontWeight = 'bold';
+    paragraph.style.fontWeight = 'bold';
 }
 
 function textItalic() {
-    document.querySelector('p').style.fontStyle = 'italic';
+    paragraph.style.fontStyle = 'italic';
 }
