@@ -42,4 +42,4 @@ function checkMail() {
         missMail.textContent = 'Ce champ doit contenir une adresse email valide';
         missMail.style.backgroundColor = "red";
     }
-}
+} 
