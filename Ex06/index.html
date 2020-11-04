@@ -7,10 +7,10 @@
 </head>
 <body>
     <form>
-        <label for="">Champ 1</label>
-        <input type="text" id="champ1" onclick="getFocus()">
-        <label for="">Champ 2</label>
-        <input type="text" id="champ2" onclick="getFocus()">
+        <label for="" id="label1">Champ 1</label>
+        <input type="text1" id="champ1" onfocus="getFocus(this);" onblur="lostFocus(this);">
+        <label for="" id="label2">Champ 2</label>
+        <input type="text" id="champ2" onfocus="getFocus(this);" onblur="lostFocus(this);">
     </form>
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>

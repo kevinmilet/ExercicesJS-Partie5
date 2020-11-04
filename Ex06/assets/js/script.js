@@ -1,3 +1,7 @@
-function getFocus() {
-    document.getElementById('champ1').focus(style.color = 'red');
-  }
+function getFocus(x) {
+    x.style.outline = "3px solid #000";
+}
+
+function lostFocus(x) {
+    x.style.outline = "none";
+}
