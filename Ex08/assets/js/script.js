@@ -1,3 +1,7 @@
+const buttonElement = document.getElementById('btn');
+
+buttonElement.addEventListener('click', cloneField);
+
 function cloneField() {
     // on assigne une variable à chaque élément du champs Prénom
     
