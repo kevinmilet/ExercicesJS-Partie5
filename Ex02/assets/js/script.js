@@ -1,7 +1,6 @@
-function checkPassword()
-{
-var password = document.getElementById('password').value;
-var passwordConfirm = document.getElementById('passwordConfirm').value;
+function checkPassword() {
+let password = document.getElementById('password').value;
+let passwordConfirm = document.getElementById('passwordConfirm').value;
  
 if(password == passwordConfirm)
 {
