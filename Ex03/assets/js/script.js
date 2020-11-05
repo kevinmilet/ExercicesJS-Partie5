@@ -1,45 +1,57 @@
-let iName = document.getElementById("name");
+let name = document.getElementById("name");
+let nameValue = document.getElementById("name").value;
+console.log(nameValue);
 let missName = document.getElementById("missName");
-let vName = new RegExp("[a-zA-Z]");
+const regName = new RegExp(/^[a-zA-Z]+$/);
 
-let iMail = document.getElementById("mail");
+let mail = document.getElementById("mail");
 let missMail = document.getElementById("missMail");
-let vMail = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+const regMail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
-let iAge = document.getElementById("age");
+let age = document.getElementById("age");
 let missAge = document.getElementById("missAge");
-let vAge = new RegExp("[0-9]");
+const regAge = new RegExp(/^[0-9]{1,3}$/);
 
-iName.addEventListener('input', checkName);
-iMail.addEventListener('input', checkMail);
-iAge.addEventListener('input', checkAge);
+name.addEventListener('input', checkName);
+mail.addEventListener('input', checkMail);
+age.addEventListener('input', checkAge);
 
 function checkName() {
-    if (iName.validity.valueMissing) {
-        missName.textContent = 'Champ obligatoire';
-        missName.style.backgroundColor = "red";
-    } else if (vName.test(iName.value) == false) {
+    if (nameValue.match(regName)) {
         missName.textContent = 'Ce champ ne doit contenir que des lettres';
-        missName.style.backgroundColor = "red";
+        missName.style.color = "red";
     }
+    else {
+        missName.textContent = '';
+    };
 }
 
+// function checkName() {
+//     if (name.validity.valueMissing) {
+//         missName.textContent = 'Champ obligatoire';
+//         missName.style.backgroundColor = "red";
+//     } else if (regName.test(name.value) == false) {
+//         missName.textContent = 'Ce champ ne doit contenir que des lettres';
+//         missName.style.backgroundColor = "red";
+//     }
+// }
+
 function checkAge() {
-    if (iAge.validity.valueMissing) {
+    if (age.validity.valueMissing) {
         missAge.textContent = 'Champ obligatoire';
-        missAge.style.backgroundColor = "red";
-    } else if (vAge.test(iAge.value) == false) {
+        missAge.style.backcolor = "red";
+    } else if (regAge.test(age.value) == false) {
         missAge.textContent = 'Ce champ ne doit contenir que des chiffres';
-        missAge.style.backgroundColor = "red";
+        missAge.style.color = "red";
     }
 }
 
 function checkMail() {
-    if (iAge.validity.valueMissing) {
+    if (mail.validity.valueMissing) {
         missMail.textContent = 'Champ obligatoire';
-        missMail.style.backgroundColor = "red";
-    } else if (vMail.test(iMail.value) == false) {
+        missMail.style.color = "red";
+    } else if (regMail.test(mail.value) == false) {
         missMail.textContent = 'Ce champ doit contenir une adresse email valide';
-        missMail.style.backgroundColor = "red";
+        missMail.style.color = "red";
     }
 } 
