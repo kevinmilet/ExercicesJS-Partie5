@@ -1,28 +1,59 @@
-let name = document.getElementById("name");
-let nameValue = document.getElementById("name").value;
-console.log(nameValue);
+// déclaration des variables pour le champ Nom
+let name = document.getElementById("inputName");
 let missName = document.getElementById("missName");
-const regName = new RegExp(/^[a-zA-Z]+$/);
+const regName = /^[a-zA-Z\-]+$/;
 
-let mail = document.getElementById("mail");
+
+// déclaration des variables pour le champ Mail
+let mail = document.getElementById("inputMail");
 let missMail = document.getElementById("missMail");
-const regMail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+const regMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-let age = document.getElementById("age");
+
+// déclaration des variables pour le champ Age
+let age = document.getElementById("inputAge");
 let missAge = document.getElementById("missAge");
-const regAge = new RegExp(/^[0-9]{1,3}$/);
+const regAge = /^[0-9]{1,3}$/;
 
+
+// déclaration des écouteurs sur les champs
 name.addEventListener('input', checkName);
 mail.addEventListener('input', checkMail);
 age.addEventListener('input', checkAge);
 
+
+// fonction qui vérifie si l'utilisateur a entré des lettres
 function checkName() {
-    if (nameValue.match(regName)) {
-        missName.textContent = 'Ce champ ne doit contenir que des lettres';
-        missName.style.color = "red";
+    if (name.value.match(regName)) {
+        missName.textContent = '';
     }
     else {
-        missName.textContent = '';
+        missName.textContent = 'Ce champ ne doit contenir que des lettres';
+        missName.style.color = "red";
+    };
+}
+
+
+// fonction qui vérifie si l'utilisateur a entré une adresse mail valide
+function checkMail() {
+    if (mail.value.match(regMail)) {
+        missMail.textContent = '';
+    }
+    else {
+        missMail.textContent = 'Ce champ doit contenir une adresse email valide';
+        missMail.style.color = "red";
+    };
+}
+
+
+// fonction qui vérifie si l'utilisateur a entré des chiffres
+function checkAge() {
+    if (age.value.match(regAge)) {
+        missAge.textContent = '';
+    }
+    else {
+        missAge.textContent = 'Ce champ ne doit contenir que des chiffres';
+        missAge.style.color = "red";
     };
 }
 
@@ -36,22 +67,22 @@ function checkName() {
 //     }
 // }
 
-function checkAge() {
-    if (age.validity.valueMissing) {
-        missAge.textContent = 'Champ obligatoire';
-        missAge.style.backcolor = "red";
-    } else if (regAge.test(age.value) == false) {
-        missAge.textContent = 'Ce champ ne doit contenir que des chiffres';
-        missAge.style.color = "red";
-    }
-}
+// function checkAge() {
+//     if (age.validity.valueMissing) {
+//         missAge.textContent = 'Champ obligatoire';
+//         missAge.style.backcolor = "red";
+//     } else if (regAge.test(age.value) == false) {
+//         missAge.textContent = 'Ce champ ne doit contenir que des chiffres';
+//         missAge.style.color = "red";
+//     }
+// }
 
-function checkMail() {
-    if (mail.validity.valueMissing) {
-        missMail.textContent = 'Champ obligatoire';
-        missMail.style.color = "red";
-    } else if (regMail.test(mail.value) == false) {
-        missMail.textContent = 'Ce champ doit contenir une adresse email valide';
-        missMail.style.color = "red";
-    }
-} 
+// function checkMail() {
+//     if (mail.validity.valueMissing) {
+//         missMail.textContent = 'Champ obligatoire';
+//         missMail.style.color = "red";
+//     } else if (regMail.test(mail.value) == false) {
+//         missMail.textContent = 'Ce champ doit contenir une adresse email valide';
+//         missMail.style.color = "red";
+//     }
+// }
