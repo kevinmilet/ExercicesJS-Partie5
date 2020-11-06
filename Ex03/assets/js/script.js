@@ -33,7 +33,6 @@ function checkName() {
     };
 }
 
-
 // fonction qui vérifie si l'utilisateur a entré une adresse mail valide
 function checkMail() {
     if (mail.value.match(regMail)) {
@@ -44,7 +43,6 @@ function checkMail() {
         missMail.style.color = "red";
     };
 }
-
 
 // fonction qui vérifie si l'utilisateur a entré des chiffres
 function checkAge() {
