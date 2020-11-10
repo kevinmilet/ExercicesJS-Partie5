@@ -35,7 +35,7 @@ function checkName() {
 
 // fonction qui vérifie si l'utilisateur a entré une adresse mail valide
 function checkMail() {
-    if (regName.test(mail.value)) {
+    if (regMail.test(mail.value)) {
         missMail.textContent = '';
     }
     else {
