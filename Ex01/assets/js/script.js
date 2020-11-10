@@ -4,16 +4,15 @@ buttonElement.addEventListener('click', checkPassword);
 
 // fonction vérifiant et validant ou non la correspondance des mots de passe
 function checkPassword() {
-    let password = document.getElementById('password').value;
-    let passwordConfirm = document.getElementById('passwordConfirm').value;
+    let password = document.getElementById('password');
+    let passwordConfirm = document.getElementById('passwordConfirm');
 
-    if (password == passwordConfirm) {
-        document.getElementById('password').style.borderColor = "green";
-        document.getElementById('passwordConfirm').style.borderColor = "green";
+    if (password.value == passwordConfirm.value) {
+        password.style.borderColor = "green";
+        passwordConfirm.style.borderColor = "green";
 
     } else {
-        document.getElementById('password').style.borderColor = "red";
-        document.getElementById('passwordConfirm').style.borderColor = "red";
-
+        password.style.borderColor = "red";
+        passwordConfirm.style.borderColor = "red";
     }
 }
