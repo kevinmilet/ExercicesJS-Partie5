@@ -7,7 +7,7 @@ const regName = /^[a-zA-Z\-]+$/;
 // déclaration des variables pour le champ Mail
 let mail = document.getElementById("inputMail");
 let missMail = document.getElementById("missMail");
-const regMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const regMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$/;
 
 
 // déclaration des variables pour le champ Age
@@ -24,7 +24,7 @@ age.addEventListener('input', checkAge);
 
 // fonction qui vérifie si l'utilisateur a entré des lettres
 function checkName() {
-    if (name.value.match(regName)) {
+    if (regName.test(name.value)) {
         missName.textContent = '';
     }
     else {
@@ -35,7 +35,7 @@ function checkName() {
 
 // fonction qui vérifie si l'utilisateur a entré une adresse mail valide
 function checkMail() {
-    if (mail.value.match(regMail)) {
+    if (regName.test(mail.value)) {
         missMail.textContent = '';
     }
     else {
@@ -46,7 +46,7 @@ function checkMail() {
 
 // fonction qui vérifie si l'utilisateur a entré des chiffres
 function checkAge() {
-    if (age.value.match(regAge)) {
+    if (regAge.test(age.value)) {
         missAge.textContent = '';
     }
     else {
