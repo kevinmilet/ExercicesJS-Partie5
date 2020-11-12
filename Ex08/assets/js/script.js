@@ -23,12 +23,14 @@ function cloneField() {
     let newLabelName = labelName.cloneNode(true);
     let newFirstnameField = fieldName.cloneNode(true);
 
-    newFirstnameField.id = 'newFirstName' + i;
+    newLabelName.id = 'newFirstNameLabel' + i;
+    newFirstnameField.id = 'newFirstNameField' + i;
 
     let newLabelAge = labelAge.cloneNode(true);
     let newAgeField = fieldAge.cloneNode(true);
 
-    newAgeField.id = 'newAge' + i;
+    newLabelAge.id = 'newAgeLabel' +i;
+    newAgeField.id = 'newAgeField' + i;
 
     // on affiche les clones avec les nouveaux indexs
     
