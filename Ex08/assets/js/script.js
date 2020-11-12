@@ -1,8 +1,13 @@
 const buttonElement = document.getElementById('btn');
+let i = 0;
 
 buttonElement.addEventListener('click', cloneField);
 
 function cloneField() {
+
+    // on incrément i pour les id
+    i++
+
     // on assigne une variable à chaque élément du champs Prénom
     
     let labelName = document.getElementById('label1');
@@ -18,12 +23,12 @@ function cloneField() {
     let newLabelName = labelName.cloneNode(true);
     let newFirstnameField = fieldName.cloneNode(true);
 
-    newFirstnameField.id = 'newFirstName';
+    newFirstnameField.id = 'newFirstName' + i;
 
     let newLabelAge = labelAge.cloneNode(true);
     let newAgeField = fieldAge.cloneNode(true);
 
-    newAgeField.id = 'newAge';
+    newAgeField.id = 'newAge' + i;
 
     // on affiche les clones avec les nouveaux indexs
     
